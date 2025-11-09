@@ -37,6 +37,6 @@
   <p>© Snug Pines 2025</p>
 </footer>
 <script src="script.js"></script>
-<button onclick="window.location.href='cart.html'">🛒 View Cart</button>
+<button onclick="localStorage.setItem('cart', JSON.stringify([{name:'Test Jumper', size:'Medium', image:'jumper1.jpg'}])); alert('Test item added!');">Add Test Item</button>
 </body>
 </html>
