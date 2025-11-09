@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop - Snug Pines</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Snug Pines</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="howitworks.html">How It Works</a>
+  </nav>
+  <div class="cart-btn" id="cart-btn">Cart (<span id="cart-count">0</span>)</div>
+</header>
+<main>
+<section class="products" id="products"></section>
+<aside class="cart-panel" id="cart-panel" aria-hidden="true">
+  <button id="close-cart" class="close">✕</button>
+  <h3>Your Cart</h3>
+  <ul id="cart-items"></ul>
+  <div class="cart-total">Total: £<span id="cart-total">0.00</span></div>
+  <button id="checkout-btn">Checkout</button>
+  <div id="checkout-form" class="hidden">
+    <h4>Checkout (demo)</h4>
+    <label>Name<input id="cust-name" placeholder="Your name"></label>
+    <label>Email<input id="cust-email" placeholder="you@example.com" type="email"></label>
+    <button id="place-order">Place Order</button>
+  </div>
+</aside>
+</main>
+<footer>
+  <p>© Snug Pines 2025</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
