@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+no<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -38,5 +38,25 @@
 </footer>
 <script src="script.js"></script>
 <button onclick="window.location.href='wishlist.html'">💖 View Wishlist</button>
+<script>
+document.getElementById('save1').addEventListener('click', function() {
+    const product = {
+        name: "Forest Green Jumper",
+        size: document.getElementById('size1').value,
+        image: "jumper1.jpg"
+    };
+
+    // Get existing wishlist or empty array
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+    // Add product
+    wishlist.push(product);
+
+    // Save back to localStorage
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+
+    alert(`${product.name} saved for later!`);
+});
+</script>
 </body>
 </html>
