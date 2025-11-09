@@ -1,46 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Snug Pines Shop</title>
-  <style>
-    .product {
-      display: inline-block;
-      margin: 20px;
-      text-align: center;
-      cursor: pointer;
-    }
-    img {
-      width: 200px;
-      border-radius: 10px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snug Pines Shop</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Snug Pines Jumpers</h1>
-
-  <!-- Jumpers -->
-  <div class="product" onclick="goToProduct('jumper1.html')">
-    <img src="jumper1.jpg" alt="Forest Green Jumper">
-    <p>Forest Green Jumper</p>
-  </div>
-
-  <div class="product" onclick="goToProduct('jumper2.html')">
-    <img src="jumper2.jpg" alt="Autumn Brown Jumper">
-    <p>Autumn Brown Jumper</p>
-  </div>
-
-  <button onclick="goToCart()">🛒 View Cart</button>
-
-  <script>
-    function goToProduct(page) {
-      window.location.href = page;
-    }
-
-    function goToCart() {
-      window.location.href = "cart.html";
-    }
-  </script>
+<header>
+  <h1>Snug Pines</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="shop.html">Shop</a>
+    <a href="about.html">About</a>
+    <a href="howitworks.html">How It Works</a>
+  </nav>
+  <div class="cart-btn" id="cart-btn">Cart (<span id="cart-count">0</span>)</div>
+</header>
+<main>
+<section class="hero">
+  <h2>Cozy Hoodies, Forest-Inspired</h2>
+  <p>Handmade hoodies with soft fabrics and foresty vibes. Browse our collection and add to your cart!</p>
+</section>
+</main>
+<footer>
+  <p>© Snug Pines 2025</p>
+</footer>
+<script src="script.js"></script>
 </body>
 </html>
