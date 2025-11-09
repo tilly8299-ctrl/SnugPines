@@ -1,28 +1,35 @@
-no<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Cart</title>
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
+    body { font-family: Arial; padding: 20px; }
     .cart-item { margin-bottom: 20px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
     .cart-item img { width: 100px; display: block; margin-bottom: 5px; }
   </style>
 </head>
 <body>
-  <h1>Your Cart</h1>
+  <header>
+    <h1>My Shop - Cart</h1>
+    <nav>
+      <a href="index.html">Home</a> | 
+      <a href="shop.html">Shop</a>
+    </nav>
+  </header>
+
+  <h2>Your Cart</h2>
   <div id="cartItems"></div>
-  <a href="shop.html">← Back to Shop</a>
-  <br><br>
+
   <button onclick="clearCart()">Clear Cart</button>
 
   <script>
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
-    const cartContainer = document.getElementById('cartItems');
+    const container = document.getElementById('cartItems');
 
     if (cart.length === 0) {
-      cartContainer.innerHTML = "<p>Your cart is empty!</p>";
+      container.innerHTML = "<p>Your cart is empty!</p>";
     } else {
       cart.forEach(item => {
         const div = document.createElement('div');
@@ -30,18 +37,16 @@ no<!DOCTYPE html>
         div.innerHTML = `
           <img src="${item.image}" alt="${item.name}">
           <strong>${item.name}</strong><br>
-          Size: ${item.size}
+          Size: ${item.size}<br>
         `;
-        cartContainer.appendChild(div);
+        container.appendChild(div);
       });
     }
 
     function clearCart() {
       localStorage.removeItem('cart');
-      alert("Cart cleared!");
       location.reload();
     }
   </script>
-  <button onclick="window.location.href='cart.html'">🛒 View Cart</button>
 </body>
 </html>
