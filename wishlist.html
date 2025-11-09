@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wishlist</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .wishlist-item { margin-bottom: 20px; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+    .wishlist-item img { width: 100px; display: block; margin-bottom: 5px; }
+  </style>
+</head>
+<body>
+  <h1>Your Wishlist</h1>
+  <div id="wishlistItems"></div>
+  <br>
+  <a href="shop.html">← Back to Shop</a>
+
+  <script>
+    // Get wishlist from localStorage, or create empty array if none
+    const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    const container = document.getElementById('wishlistItems');
+
+    if (wishlist.length === 0) {
+      container.innerHTML = "<p>Your wishlist is empty!</p>";
+    } else {
+      wishlist.forEach(function(item) {
+        const div = document.createElement('div');
+        div.className = "wishlist-item";
+        div.innerHTML = 
+          '<img src="' + item.image + '" alt="' + item.name + '">' +
+          '<strong>' + item.name + '</strong><br>' +
+          'Size: ' + item.size + '<br><br>';
+        container.appendChild(div);
+      });
+    }
+  </script>
+</body>
+</html>
